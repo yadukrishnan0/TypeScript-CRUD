@@ -15,6 +15,6 @@ const productSchema = new Schema<Product>({
       Discount:{type:Number,required:true},
       color:{type:String,required:true},
       size:{type:String}
-})
+    })
 
-export default model<Product>('products',productSchema);
+export const productModel= model<Product>('products',productSchema);
