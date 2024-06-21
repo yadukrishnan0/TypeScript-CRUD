@@ -36,5 +36,14 @@ export default {
     } catch (err) {
       res.status(500).send("internal server error");
     }
+  },
+  deleteProduct:async(req:Request,res:Response)=>{
+    try{  
+  const id =req.query.id as string;
+  await productModel.deleteOne({_id:id});
+  res.status(200).send('product deleted success')
+    }catch(err){
+      res.status(500).send('internal server error')
+    }
   }
 };
